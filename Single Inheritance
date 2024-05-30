@@ -1,0 +1,45 @@
+
+class Shape {
+    protected double width;
+    protected double height;
+
+    
+    Shape(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    
+    double calculateArea() {
+        return width * height;
+    }
+}
+
+
+class Rectangle extends Shape {
+    
+    Rectangle(double width, double height) {
+        super(width, height);
+    }
+
+    
+    double calculatePerimeter() {
+        return 2 * (width + height);
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        
+        Rectangle myRectangle = new Rectangle(5, 3);
+
+        
+        double area = myRectangle.calculateArea();
+        System.out.println("Area of Rectangle: " + area);
+
+      
+        double perimeter = myRectangle.calculatePerimeter();
+        System.out.println("Perimeter of Rectangle: " + perimeter);
+    }
+}
