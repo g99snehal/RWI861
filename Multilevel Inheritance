@@ -1,0 +1,63 @@
+
+class Employee {
+    String name;
+    double salary;
+
+    
+    Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Salary: $" + salary);
+    }
+}
+
+
+class Manager extends Employee {
+    String department;
+
+    
+    Manager(String name, double salary, String department) {
+        super(name, salary);
+        this.department = department;
+    }
+
+    void displayDepartment() {
+        System.out.println("Department: " + department);
+    }
+}
+
+
+class Director extends Manager {
+    int stockOptions;
+
+    
+    Director(String name, double salary, String department, int stockOptions) {
+        super(name, salary, department);
+        this.stockOptions = stockOptions;
+    }
+
+    void displayStockOptions() {
+        System.out.println("Stock Options: " + stockOptions);
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        
+        Director director = new Director("John Doe", 100000, "Finance", 5000);
+
+        
+        director.displayDetails();
+
+        
+        director.displayDepartment();
+
+        
+        director.displayStockOptions();
+    }
+}
