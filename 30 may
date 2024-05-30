@@ -1,0 +1,49 @@
+
+interface Vehicle {
+    void start();
+    void stop();
+}
+
+
+class Car {
+    void accelerate() {
+        System.out.println("Car is accelerating");
+    }
+
+    void brake() {
+        System.out.println("Car is braking");
+    }
+}
+
+class ElectricCar extends Car implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Electric car is starting");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Electric car is stopping");
+    }
+
+    void charge() {
+        System.out.println("Electric car is charging");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        
+        ElectricCar myElectricCar = new ElectricCar();
+
+        
+        myElectricCar.accelerate();
+        myElectricCar.brake();
+
+        
+        myElectricCar.start();
+        myElectricCar.stop();
+
+        
+        myElectricCar.charge();
+    }
+}
